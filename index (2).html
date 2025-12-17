@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyPetPeace</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: #000;
+        }
+
+        #videoContainer {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #mainVideo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        #unmuteBtn {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            padding: 15px 30px;
+            font-size: 18px;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: none;
+        }
+
+        #unmuteBtn:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.05);
+        }
+
+        #unmuteBtn.show {
+            display: block;
+        }
+
+        .sound-icon {
+            display: inline-block;
+            margin-right: 8px;
+        }
+
+        #startOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #c41e3a 0%, #8b0000 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            overflow: hidden;
+        }
+
+        #christmasTree {
+            position: absolute;
+            font-size: 300px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            filter: hue-rotate(90deg) saturate(1.5) brightness(0.8);
+        }
+
+        #startOverlay > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        #startOverlay.hidden {
+            display: none;
+        }
+
+        #startBtn {
+            padding: 25px 70px;
+            font-size: 28px;
+            font-weight: bold;
+            background: white;
+            color: #2d8659;
+            border: 4px solid #2d8659;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 30px rgba(45, 134, 89, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        #startBtn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 40px rgba(45, 134, 89, 0.6);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        #startText {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        #animatedPets {
+            position: absolute;
+            font-size: 50px;
+            white-space: nowrap;
+            animation: runAround 12s linear infinite;
+            z-index: 3;
+        }
+
+        @keyframes runAround {
+            0% {
+                left: -200px;
+                top: 20%;
+            }
+            15% {
+                left: 80%;
+                top: 20%;
+            }
+            30% {
+                left: 80%;
+                top: 70%;
+            }
+            45% {
+                left: 10%;
+                top: 70%;
+            }
+            60% {
+                left: 10%;
+                top: 40%;
+            }
+            75% {
+                left: 90%;
+                top: 40%;
+            }
+            90% {
+                left: 90%;
+                top: 10%;
+            }
+            100% {
+                left: -200px;
+                top: 10%;
+            }
+        }
+
+        #shopNowBtn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px 60px;
+            font-size: 24px;
+            font-weight: bold;
+            background: white;
+            color: red;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            z-index: 10;
+            display: none;
+            text-decoration: none;
+        }
+
+        #shopNowBtn:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        #shopNowBtn.show {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="startOverlay">
+        <div id="christmasTree">🎄</div>
+        <p id="startText">Skip the Dog and Cat Chase and make yourself happy and your bestie happy THIS CHRISTMAS</p>
+        <button id="startBtn">ENTER</button>
+        <div id="animatedPets">🐕💡🎄💡🐈</div>
+    </div>
+
+    <div id="videoContainer">
+        <video id="mainVideo" autoplay playsinline>
+            <source src="Video Project 1christ.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button id="unmuteBtn">
+            <span class="sound-icon">🔊</span>
+            Click to Unmute
+        </button>
+        <a id="shopNowBtn" href="giftideas.html">SHOP NOW</a>
+    </div>
+
+    <script>
+        const video = document.getElementById('mainVideo');
+        const unmuteBtn = document.getElementById('unmuteBtn');
+        const shopNowBtn = document.getElementById('shopNowBtn');
+        const startOverlay = document.getElementById('startOverlay');
+        const startBtn = document.getElementById('startBtn');
+
+        // Prevent video from playing until user clicks start
+        video.pause();
+
+        // Start button handler - enables sound and starts video
+        startBtn.addEventListener('click', () => {
+            startOverlay.classList.add('hidden');
+            video.muted = false;
+            video.volume = 1.0;
+            video.play().catch(error => {
+                console.log('Play error:', error);
+            });
+        });
+
+        // Show Shop Now button when video ends
+        video.addEventListener('ended', () => {
+            unmuteBtn.classList.remove('show');
+            shopNowBtn.classList.add('show');
+        });
+    </script>
+</body>
+</html>
