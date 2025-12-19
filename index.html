@@ -63,7 +63,7 @@
             align-items: center;
         }
 
-        #mainVideo {
+        #mainImage {
             width: 100%;
             height: 100%;
             object-fit: contain;
@@ -281,10 +281,7 @@
     </div>
 
     <div id="videoContainer">
-        <video id="mainVideo" autoplay playsinline>
-            <source src="Video Project 1christ.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <img id="mainImage" src="dogcatspa.jpg" alt="PawTree Premium Pet Products">
         <button id="unmuteBtn">
             <span class="sound-icon">🔊</span>
             Click to Unmute
@@ -293,29 +290,19 @@
     </div>
 
     <script>
-        const video = document.getElementById('mainVideo');
+        const mainImage = document.getElementById('mainImage');
         const unmuteBtn = document.getElementById('unmuteBtn');
         const shopNowBtn = document.getElementById('shopNowBtn');
         const startOverlay = document.getElementById('startOverlay');
         const startBtn = document.getElementById('startBtn');
 
-        // Prevent video from playing until user clicks start
-        video.pause();
-
-        // Start button handler - enables sound and starts video
+        // Start button handler - shows main image and shop button
         startBtn.addEventListener('click', () => {
             startOverlay.classList.add('hidden');
-            video.muted = false;
-            video.volume = 1.0;
-            video.play().catch(error => {
-                console.log('Play error:', error);
-            });
-        });
-
-        // Show Shop Now button when video ends
-        video.addEventListener('ended', () => {
-            unmuteBtn.classList.remove('show');
-            shopNowBtn.classList.add('show');
+            // Show shop now button after a delay
+            setTimeout(() => {
+                shopNowBtn.classList.add('show');
+            }, 1000);
         });
     </script>
 </body>
