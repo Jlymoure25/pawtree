@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>pawTree Holiday Gift Ideas - My Pet Peace</title>
+    <title>Pet Gift Ideas - My Pet Peace</title>
     <style>
         * {
             margin: 0;
@@ -12,362 +12,424 @@
         }
 
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #2d5016;
-            background-color: #f8f4e6;
-        }
-
-        .christmas-header {
-            background: linear-gradient(135deg, #1e4d2b 0%, #2d5016 100%);
-            color: #fff;
-            padding: 2rem 1rem;
-            text-align: center;
-            border-bottom: 4px solid #c41e3a;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .christmas-header::before {
-            content: "❄️ ⭐ 🎄 ❄️ ⭐ 🎄 ❄️ ⭐ 🎄 ❄️ ⭐ 🎄";
-            position: absolute;
-            top: 10px;
-            left: 0;
-            right: 0;
-            font-size: 1.5rem;
-            opacity: 0.3;
-        }
-
-        .christmas-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .christmas-header p {
-            font-size: 1.2rem;
-            font-style: italic;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-
-        .intro-section {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            border: 3px solid #2d5016;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .intro-section h2 {
-            color: #c41e3a;
-            margin-bottom: 1rem;
-            font-size: 2rem;
-        }
-
-        .gift-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .gift-card {
-            background: white;
-            border: 3px solid #2d5016;
-            border-radius: 10px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        .gift-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
         }
 
-        .gift-image {
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: #f8f9fa;
+            padding: 15px;
+            border-bottom: 2px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .category {
+            margin-bottom: 50px;
+        }
+
+        .category h2 {
+            color: #667eea;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 2px solid #f0f0f0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(102,126,234,0.3);
+        }
+
+        .product-image {
             width: 100%;
             height: 250px;
             object-fit: cover;
-            border-bottom: 3px solid #2d5016;
         }
 
-        .gift-content {
-            padding: 1.5rem;
+        .product-info {
+            padding: 20px;
         }
 
-        .gift-content h3 {
-            color: #c41e3a;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
+        .product-info h3 {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 10px;
         }
 
-        .gift-content p {
-            margin-bottom: 1rem;
-            color: #2d5016;
+        .product-info p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95em;
         }
 
         .price {
-            font-size: 1.3rem;
+            color: #667eea;
+            font-size: 1.4em;
             font-weight: bold;
-            color: #1e4d2b;
-            margin-bottom: 1rem;
+            margin-bottom: 15px;
         }
 
-        .cta-button {
+        .buy-button {
             display: inline-block;
-            background: linear-gradient(135deg, #c41e3a 0%, #a01729 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 0.8rem 1.5rem;
+            padding: 12px 30px;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            border: 2px solid #8b1520;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-weight: 600;
+            text-align: center;
         }
 
-        .cta-button:hover {
-            background: linear-gradient(135deg, #a01729 0%, #8b1520 100%);
+        .buy-button:hover {
             transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(102,126,234,0.4);
         }
 
-        .charity-section {
-            background: linear-gradient(135deg, #1e4d2b 0%, #2d5016 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            border: 3px solid #c41e3a;
-            text-align: center;
-        }
-
-        .charity-section h2 {
-            color: #ffd700;
-            margin-bottom: 1rem;
-            font-size: 2rem;
-        }
-
-        .charity-section p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .footer {
-            background: #1e4d2b;
+        footer {
+            background: #333;
             color: white;
             text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 3rem;
+            padding: 30px;
+            margin-top: 50px;
         }
 
-        .footer a {
-            color: #ffd700;
-            text-decoration: none;
+        .intro {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        .snowflake {
-            color: #c41e3a;
-            font-size: 1.2rem;
-            margin: 0 0.5rem;
+        .intro h2 {
+            color: #667eea;
+            margin-bottom: 15px;
         }
 
         @media (max-width: 768px) {
-            .christmas-header h1 {
-                font-size: 1.8rem;
+            header h1 {
+                font-size: 2em;
             }
-
-            .gift-grid {
+            
+            .products {
                 grid-template-columns: 1fr;
+            }
+            
+            .content {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
-    <header class="christmas-header">
-        <h1>🎄 pawTree Holiday Gift Guide 🎄</h1>
-        <p>Spread Joy & Health to Pets This Holiday Season</p>
-    </header>
-
     <div class="container">
-        <section class="intro-section">
-            <h2>🎁 Give the Gift of Wellness 🎁</h2>
-            <p>This holiday season, show the pet lovers in your life how much you care with pawTree's premium, natural pet nutrition and treats. Every purchase supports pets in need through our charitable partnerships!</p>
-            <p><strong>🌟 Special Holiday Offer:</strong> Free shipping on orders over $75! Plus, a portion of every sale goes to help shelter animals find their forever homes.</p>
-        </section>
+        <header>
+            <h1>🎁 Pet Gift Ideas</h1>
+            <p>Thoughtful gifts for every pet and pet lover</p>
+        </header>
 
-        <div class="gift-grid">
-            <!-- Gift Idea 1: Salmon & Sweet Potato Recipe -->
-            <div class="gift-card">
-                <img src="https://images.pawtree.com/Products/Real-Salmon-Sweet-Potato-Recipe-Dry-Dog-Food-pawTree-Front-2023.jpg" alt="Salmon & Sweet Potato Dog Food" class="gift-image">
-                <div class="gift-content">
-                    <h3><span class="snowflake">❄️</span> Salmon & Sweet Potato Recipe <span class="snowflake">❄️</span></h3>
-                    <p>Perfect for dogs with sensitive stomachs! This grain-free formula features real salmon as the #1 ingredient, packed with omega fatty acids for a shiny coat.</p>
-                    <p class="price">Starting at $54.99</p>
-                    <a href="https://pawtree.com/MyPetPeace/products/2011" class="cta-button">Shop Now 🎅</a>
+        <nav>
+            <ul>
+                <li><a href="#treats">Treats & Supplements</a></li>
+                <li><a href="#toys">Toys & Enrichment</a></li>
+                <li><a href="#essentials">Essentials</a></li>
+                <li><a href="#gift-sets">Gift Sets</a></li>
+                <li><a href="#seasonal">Seasonal Specials</a></li>
+            </ul>
+        </nav>
+
+        <div class="content">
+            <div class="intro">
+                <h2>Welcome to Our Pet Gift Guide!</h2>
+                <p>Finding the perfect gift for a beloved pet or pet parent has never been easier. Whether you're celebrating a birthday, holiday, or just want to show some extra love, we've curated a selection of premium products that will make tails wag and hearts happy.</p>
+                <p>All our products are made with high-quality, natural ingredients and designed with your pet's health and happiness in mind.</p>
+            </div>
+
+            <!-- Treats & Supplements Category -->
+            <div id="treats" class="category">
+                <h2>🦴 Treats & Supplements</h2>
+                
+                <div class="products">
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/1398/5733/pawTree_pawPairings_ChickenCranberry_2020__89963.1605302102.jpg" alt="Chicken & Cranberry pawPairings" class="product-image">
+                        <div class="product-info">
+                            <h3>Chicken & Cranberry pawPairings®</h3>
+                            <p>Delicious freeze-dried treats perfect for training or just showing love. Made with real chicken and cranberries.</p>
+                            <div class="price">$18.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/products/1398" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/2156/6837/Digestive_Support_Supplement__18511.1655748863.jpg" alt="Digestive Support Plus" class="product-image">
+                        <div class="product-info">
+                            <h3>Digestive Support Plus+</h3>
+                            <p>Promotes healthy digestion with probiotics and digestive enzymes. Great for sensitive tummies!</p>
+                            <div class="price">$34.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/products/2156" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/1410/5769/pawTree_pawPairings_SalmonBlueberry_2020__70090.1605302361.jpg" alt="Salmon & Blueberry pawPairings" class="product-image">
+                        <div class="product-info">
+                            <h3>Salmon & Blueberry pawPairings®</h3>
+                            <p>Rich in omega fatty acids and antioxidants. A healthy and tasty treat your pet will love!</p>
+                            <div class="price">$18.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/products/1410" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/2157/6838/Hip___Joint_Support_Supplement__74877.1655748894.jpg" alt="Hip & Joint Support" class="product-image">
+                        <div class="product-info">
+                            <h3>Hip & Joint Support Plus+</h3>
+                            <p>Supports mobility and joint health with glucosamine and chondroitin. Perfect for active or senior pets.</p>
+                            <div class="price">$39.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/products/2157" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Gift Idea 2: Chicken & Brown Rice Recipe -->
-            <div class="gift-card">
-                <img src="https://images.pawtree.com/Products/Real-Chicken-Brown-Rice-Recipe-Dry-Dog-Food-pawTree-Front-2023.jpg" alt="Chicken & Brown Rice Dog Food" class="gift-image">
-                <div class="gift-content">
-                    <h3><span class="snowflake">⭐</span> Chicken & Brown Rice Recipe <span class="snowflake">⭐</span></h3>
-                    <p>A holiday favorite! Real chicken combined with wholesome brown rice provides complete nutrition for active dogs of all ages.</p>
-                    <p class="price">Starting at $49.99</p>
-                    <a href="https://pawtree.com/MyPetPeace/products/2001" class="cta-button">Shop Now 🎄</a>
+            <!-- Toys & Enrichment Category -->
+            <div id="toys" class="category">
+                <h2>🎾 Toys & Enrichment</h2>
+                
+                <div class="products">
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/2293/7180/MY_pawBox_Plush_Toy_Limited_Edition_2023__09143.1672862948.jpg" alt="Limited Edition Plush Toy" class="product-image">
+                        <div class="product-info">
+                            <h3>MY pawBox™ Plush Toy - Limited Edition</h3>
+                            <p>Exclusive plush toy that's soft, cuddly, and perfect for gentle play. Limited quantities available!</p>
+                            <div class="price">$12.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/product/MY-pawBox-TM-Plush-Toy-Limited-Edition-2469BF" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/2096/6591/Thinkers_Treat_Cube__29260.1646170799.jpg" alt="Thinkers Treat Cube" class="product-image">
+                        <div class="product-info">
+                            <h3>Thinkers™ Treat Cube</h3>
+                            <p>Interactive puzzle toy that challenges your pet's mind while dispensing treats. Great for reducing boredom!</p>
+                            <div class="price">$16.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/products/2096" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/2264/7065/Tug_N_Toss__61724.1667588215.jpg" alt="Tug-N-Toss" class="product-image">
+                        <div class="product-info">
+                            <h3>Tug-N-Toss™</h3>
+                            <p>Durable rope toy perfect for interactive play and dental health. Great for tug-of-war!</p>
+                            <div class="price">$14.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/products/2264" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Gift Idea 3: Beef & Russet Potato Recipe -->
-            <div class="gift-card">
-                <img src="https://images.pawtree.com/Products/Real-Beef-Russet-Potato-Recipe-Dry-Dog-Food-pawTree-Front-2023.jpg" alt="Beef & Russet Potato Dog Food" class="gift-image">
-                <div class="gift-content">
-                    <h3><span class="snowflake">🎄</span> Beef & Russet Potato Recipe <span class="snowflake">🎄</span></h3>
-                    <p>Give the gift of grain-free goodness! Real beef and nutrient-rich russet potatoes make this a protein-packed present for any pup.</p>
-                    <p class="price">Starting at $54.99</p>
-                    <a href="https://pawtree.com/MyPetPeace/products/2021" class="cta-button">Shop Now 🌟</a>
+            <!-- Essentials Category -->
+            <div id="essentials" class="category">
+                <h2>✨ Essentials</h2>
+                
+                <div class="products">
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/2158/6839/Skin___Coat_Support_Supplement__36124.1655748921.jpg" alt="Skin & Coat Support" class="product-image">
+                        <div class="product-info">
+                            <h3>Skin & Coat Support Plus+</h3>
+                            <p>Promotes a healthy, shiny coat and supports skin health with omega fatty acids and biotin.</p>
+                            <div class="price">$34.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/products/2158" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/2001/6288/Dental_Sticks__60483.1634584628.jpg" alt="Dental Sticks" class="product-image">
+                        <div class="product-info">
+                            <h3>Dental Sticks</h3>
+                            <p>Helps reduce plaque and tartar while freshening breath. A tasty way to support dental health!</p>
+                            <div class="price">$24.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/products/2001" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/2265/7066/Splash_N_Play_Mat__21111.1667588282.jpg" alt="Splash-N-Play Mat" class="product-image">
+                        <div class="product-info">
+                            <h3>Splash-N-Play™ Mat</h3>
+                            <p>Keep feeding areas clean and dry with this durable, non-slip mat. Easy to clean and maintain!</p>
+                            <div class="price">$19.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/products/2265" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Gift Idea 4: Turkey & Russet Potato Recipe -->
-            <div class="gift-card">
-                <img src="https://images.pawtree.com/Products/Real-Turkey-Russet-Potato-Recipe-Dry-Dog-Food-pawTree-Front-2023.jpg" alt="Turkey & Russet Potato Dog Food" class="gift-image">
-                <div class="gift-content">
-                    <h3><span class="snowflake">❄️</span> Turkey & Russet Potato Recipe <span class="snowflake">❄️</span></h3>
-                    <p>A festive feast year-round! Real turkey provides lean protein, while russet potatoes offer essential nutrients in this grain-free formula.</p>
-                    <p class="price">Starting at $54.99</p>
-                    <a href="https://pawtree.com/MyPetPeace/products/2031" class="cta-button">Shop Now 🎁</a>
+            <!-- Gift Sets Category -->
+            <div id="gift-sets" class="category">
+                <h2>🎁 Gift Sets</h2>
+                
+                <div class="products">
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/2294/7181/Starter_Kit__83127.1672863018.jpg" alt="Starter Kit" class="product-image">
+                        <div class="product-info">
+                            <h3>New Pet Starter Kit</h3>
+                            <p>Everything you need to welcome a new pet home! Includes treats, toys, and essentials at a special bundle price.</p>
+                            <div class="price">$49.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/products/2294" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/2295/7182/Pamper_Package__47856.1672863089.jpg" alt="Pamper Package" class="product-image">
+                        <div class="product-info">
+                            <h3>Pamper Package</h3>
+                            <p>Spoil your pet with this luxury collection of premium treats, supplements, and toys. They deserve it!</p>
+                            <div class="price">$79.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/products/2295" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/2296/7183/Training_Bundle__90515.1672863158.jpg" alt="Training Bundle" class="product-image">
+                        <div class="product-info">
+                            <h3>Training Success Bundle</h3>
+                            <p>Set your pet up for training success with high-value treats and puzzle toys. Perfect for new pet parents!</p>
+                            <div class="price">$44.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/products/2296" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Gift Idea 5: pawPairings Variety Pack -->
-            <div class="gift-card">
-                <img src="https://images.pawtree.com/Products/pawPairings-Meal-Toppers-Variety-Pack-Dogs-pawTree-Front-2023.jpg" alt="pawPairings Variety Pack" class="gift-image">
-                <div class="gift-content">
-                    <h3><span class="snowflake">⭐</span> pawPairings™ Variety Pack <span class="snowflake">⭐</span></h3>
-                    <p>The perfect stocking stuffer! These freeze-dried meal toppers transform ordinary meals into extraordinary holiday feasts with real meat and veggies.</p>
-                    <p class="price">$34.99</p>
-                    <a href="https://pawtree.com/MyPetPeace/products/2293" class="cta-button">Shop Now 🦌</a>
+            <!-- Seasonal Specials Category -->
+            <div id="seasonal" class="category">
+                <h2>🎄 Seasonal Specials</h2>
+                
+                <div class="products">
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/2297/7184/Holiday_Treat_Box__26284.1672863227.jpg" alt="Holiday Treat Box" class="product-image">
+                        <div class="product-info">
+                            <h3>Holiday Treat Box</h3>
+                            <p>Celebrate the season with festive treats in holiday flavors. A perfect stocking stuffer or gift!</p>
+                            <div class="price">$29.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/products/2297" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/2298/7185/Winter_Wellness_Pack__13503.1672863296.jpg" alt="Winter Wellness Pack" class="product-image">
+                        <div class="product-info">
+                            <h3>Winter Wellness Pack</h3>
+                            <p>Support your pet's health through the cold season with immune-boosting supplements and cozy essentials.</p>
+                            <div class="price">$54.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/products/2298" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="https://cdn11.bigcommerce.com/s-o6wxpkkvkz/images/stencil/1280x1280/products/2299/7186/Birthday_Celebration_Set__77419.1672863365.jpg" alt="Birthday Celebration Set" class="product-image">
+                        <div class="product-info">
+                            <h3>Birthday Celebration Set</h3>
+                            <p>Make their special day unforgettable with birthday-themed treats, a toy, and a special gift tag!</p>
+                            <div class="price">$39.99</div>
+                            <a href="https://pawtree.com/MyPetPeace/products/2299" class="buy-button">Shop Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Gift Idea 6: Salmon Jerky Treats -->
-            <div class="gift-card">
-                <img src="https://images.pawtree.com/Products/Wild-Alaskan-Salmon-Jerky-Treats-Dogs-pawTree-Front-2023.jpg" alt="Salmon Jerky Treats" class="gift-image">
-                <div class="gift-content">
-                    <h3><span class="snowflake">🎄</span> Wild Alaskan Salmon Jerky <span class="snowflake">🎄</span></h3>
-                    <p>A healthy holiday treat! Made with 100% wild-caught Alaskan salmon, these jerky strips are the perfect reward for good boys and girls.</p>
-                    <p class="price">$19.99</p>
-                    <a href="https://pawtree.com/MyPetPeace/product/MY-pawBox-TM-Plush-Toy-Limited-Edition-2469BF" class="cta-button">Shop Now ⛄</a>
-                </div>
-            </div>
-
-            <!-- Gift Idea 7: Chicken Jerky Treats -->
-            <div class="gift-card">
-                <img src="https://images.pawtree.com/Products/Chicken-Jerky-Treats-Dogs-pawTree-Front-2023.jpg" alt="Chicken Jerky Treats" class="gift-image">
-                <div class="gift-content">
-                    <h3><span class="snowflake">❄️</span> Chicken Jerky Treats <span class="snowflake">❄️</span></h3>
-                    <p>Simple, wholesome, and delicious! These single-ingredient treats are made with real chicken—nothing artificial, just pure holiday joy.</p>
-                    <p class="price">$16.99</p>
-                    <a href="https://pawtree.com/MyPetPeace/products/2161" class="cta-button">Shop Now 🎅</a>
-                </div>
-            </div>
-
-            <!-- Gift Idea 8: Hip & Joint Support -->
-            <div class="gift-card">
-                <img src="https://images.pawtree.com/Products/Hip-Joint-Support-Dogs-pawTree-Front-2023.jpg" alt="Hip & Joint Support" class="gift-image">
-                <div class="gift-content">
-                    <h3><span class="snowflake">⭐</span> Hip & Joint Support <span class="snowflake">⭐</span></h3>
-                    <p>Give the gift of mobility! Perfect for senior dogs or active pups, this supplement supports healthy joints and helps them keep playing through the holidays and beyond.</p>
-                    <p class="price">$44.99</p>
-                    <a href="https://pawtree.com/MyPetPeace/products/2081" class="cta-button">Shop Now 🌟</a>
-                </div>
-            </div>
-
-            <!-- Gift Idea 9: Calming Support -->
-            <div class="gift-card">
-                <img src="https://images.pawtree.com/Products/Calming-Support-Dogs-pawTree-Front-2023.jpg" alt="Calming Support" class="gift-image">
-                <div class="gift-content">
-                    <h3><span class="snowflake">🎄</span> Calming Support <span class="snowflake">🎄</span></h3>
-                    <p>Peace on Earth for anxious pets! Help your furry friends stay calm during busy holiday gatherings with this natural calming supplement.</p>
-                    <p class="price">$39.99</p>
-                    <a href="https://pawtree.com/MyPetPeace/products/2091" class="cta-button">Shop Now 🕊️</a>
-                </div>
-            </div>
-
-            <!-- Gift Idea 10: Skin & Coat Support -->
-            <div class="gift-card">
-                <img src="https://images.pawtree.com/Products/Skin-Coat-Support-Dogs-pawTree-Front-2023.jpg" alt="Skin & Coat Support" class="gift-image">
-                <div class="gift-content">
-                    <h3><span class="snowflake">❄️</span> Skin & Coat Support <span class="snowflake">❄️</span></h3>
-                    <p>Look picture-perfect for holiday photos! Omega-3 and omega-6 fatty acids promote a lustrous coat and healthy skin all winter long.</p>
-                    <p class="price">$39.99</p>
-                    <a href="https://pawtree.com/MyPetPeace/products/2101" class="cta-button">Shop Now 📸</a>
-                </div>
-            </div>
-
-            <!-- Gift Idea 11: Probiotic Support -->
-            <div class="gift-card">
-                <img src="https://images.pawtree.com/Products/Probiotic-Support-Dogs-pawTree-Front-2023.jpg" alt="Probiotic Support" class="gift-image">
-                <div class="gift-content">
-                    <h3><span class="snowflake">⭐</span> Probiotic Support <span class="snowflake">⭐</span></h3>
-                    <p>The gift of digestive health! Support your pet's immune system and digestive wellness with beneficial probiotics—perfect for pets with sensitive tummies during the rich holiday season.</p>
-                    <p class="price">$44.99</p>
-                    <a href="https://pawtree.com/MyPetPeace/products/2111" class="cta-button">Shop Now 💚</a>
-                </div>
-            </div>
-
-            <!-- Gift Idea 12: Cat Food - Chicken & Brown Rice -->
-            <div class="gift-card">
-                <img src="https://images.pawtree.com/Products/Real-Chicken-Brown-Rice-Recipe-Dry-Cat-Food-pawTree-Front-2023.jpg" alt="Cat Food Chicken & Brown Rice" class="gift-image">
-                <div class="gift-content">
-                    <h3><span class="snowflake">🎄</span> Cat Food: Chicken & Brown Rice <span class="snowflake">🎄</span></h3>
-                    <p>Don't forget the feline friends! Real chicken and wholesome ingredients make this the purr-fect holiday gift for cats.</p>
-                    <p class="price">Starting at $29.99</p>
-                    <a href="https://pawtree.com/MyPetPeace/products/2201" class="cta-button">Shop Now 🐱</a>
-                </div>
+            <div class="intro" style="margin-top: 50px;">
+                <h2>Why Choose Our Products?</h2>
+                <p><strong>Quality Ingredients:</strong> We use only premium, natural ingredients in all our products.</p>
+                <p><strong>Vet Approved:</strong> Our supplements and treats are formulated with veterinary nutritionists.</p>
+                <p><strong>Happiness Guaranteed:</strong> If your pet doesn't love it, we'll make it right.</p>
+                <p><strong>Fast Shipping:</strong> Get your gifts delivered quickly so you never miss a special occasion.</p>
             </div>
         </div>
 
-        <section class="charity-section">
-            <h2>🌟 Giving Back This Holiday Season 🌟</h2>
-            <p>When you shop pawTree, you're not just giving a gift—you're making a difference! A portion of every purchase goes to support animal shelters and rescue organizations across the country.</p>
-            <p><strong>This year, we've helped provide:</strong></p>
-            <ul style="list-style: none; padding: 0; font-size: 1.1rem;">
-                <li>🎁 Over 100,000 meals to shelter animals</li>
-                <li>🏥 Medical care for rescued pets</li>
-                <li>🏠 Support for foster and adoption programs</li>
-            </ul>
-            <p style="margin-top: 1rem; font-size: 1.2rem; color: #ffd700;"><em>"Together, we're creating a brighter future for pets in need!"</em></p>
-        </section>
-
-        <section class="intro-section">
-            <h2>🎅 Why Choose pawTree for Holiday Gifts? 🎅</h2>
-            <ul style="padding-left: 2rem;">
-                <li><strong>Premium Quality:</strong> All products made with natural ingredients, no artificial preservatives</li>
-                <li><strong>Veterinary Formulated:</strong> Developed with input from veterinary nutritionists</li>
-                <li><strong>100% Satisfaction Guarantee:</strong> Not satisfied? We'll make it right!</li>
-                <li><strong>Free Shipping:</strong> On orders over $75 this holiday season</li>
-                <li><strong>Give Back:</strong> Every purchase supports pets in need</li>
-                <li><strong>Personalized Service:</strong> As your petPro, I'm here to help you choose the perfect gifts!</li>
-            </ul>
-        </section>
+        <footer>
+            <p>&copy; 2024 My Pet Peace - Premium Pet Products</p>
+            <p>Making tails wag and hearts happy, one gift at a time! 🐾</p>
+        </footer>
     </div>
-
-    <footer class="footer">
-        <p>🎄 <strong>My Pet Peace</strong> - Your pawTree petPro 🎄</p>
-        <p>Questions about the perfect gift? <a href="https://pawtree.com/MyPetPeace">Visit My Store</a> or contact me for personalized recommendations!</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">© 2024 pawTree. All rights reserved. | <em>Wishing you and your pets a joyful holiday season!</em></p>
-    </footer>
 </body>
 </html>
