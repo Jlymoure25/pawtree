@@ -3,246 +3,347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gift Ideas - Pawtree</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Christmas Gift Ideas For Your Bestie - MyPetPeace</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: white;
+            border: 20px solid #2d8659;
+            min-height: 100vh;
+            color: #2d8659;
+            line-height: 1.6;
+        }
+
+        .top-link {
+            text-align: right;
+            padding: 15px 30px;
+            font-size: 12px;
+        }
+
+        .top-link a {
+            color: #2d8659;
+            text-decoration: none;
+        }
+
+        .top-link a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: #2d8659;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .image-link {
+            display: block;
+            text-align: center;
+            margin: 30px auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .image-link:hover {
+            transform: scale(1.02);
+        }
+
+        .christmas-image {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid #2d8659;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(45, 134, 89, 0.2);
+        }
+
+        .content-section {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border: 2px solid #2d8659;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #2d8659;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        p {
+            color: #2d8659;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            text-align: justify;
+        }
+
+        .program-section {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: white;
+            border-left: 5px solid #2d8659;
+        }
+
+        .program-section h3 {
+            color: #2d8659;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .link-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 15px 30px;
+            background-color: #2d8659;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .link-button:hover {
+            background-color: #1f5e3f;
+            transform: translateY(-2px);
+        }
+
+        .donate-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .donate-link {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .donate-link:hover {
+            transform: scale(1.05);
+        }
+
+        .donate-image {
+            max-width: 300px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .shop-now-btn {
+            display: block;
+            margin: 50px auto;
+            padding: 20px 60px;
+            font-size: 24px;
+            font-weight: bold;
+            background: white;
+            color: red;
+            border: 3px solid red;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            max-width: 300px;
+        }
+
+        .shop-now-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .thank-you {
+            text-align: center;
+            margin: 40px 0;
+            font-size: 1.2em;
+            color: #2d8659;
+            font-weight: bold;
+        }
+
+        .plush-link {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+
+        .plush-link a {
+            color: #2d8659;
+            text-decoration: none;
+            font-weight: bold;
+            border-bottom: 2px solid #2d8659;
+        }
+
+        .plush-link a:hover {
+            color: #1f5e3f;
+            border-bottom-color: #1f5e3f;
+        }
+
+        .bestie-spa-section {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #f0f8f4;
+            border: 2px solid #2d8659;
+            border-radius: 10px;
+        }
+
+        .spa-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .spa-image {
+            flex: 0 0 auto;
+        }
+
+        .spa-cartoon {
+            max-width: 250px;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid #2d8659;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            animation: gentle-bounce 3s ease-in-out infinite;
+        }
+
+        .spa-cartoon:hover {
+            transform: scale(1.05);
+            animation: playful-wiggle 0.5s ease-in-out;
+        }
+
+        @keyframes gentle-bounce {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes playful-wiggle {
+            0%, 100% {
+                transform: rotate(0deg) scale(1.05);
+            }
+            25% {
+                transform: rotate(-5deg) scale(1.05);
+            }
+            75% {
+                transform: rotate(5deg) scale(1.05);
+            }
+        }
+
+        .spa-text {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .spa-text h2 {
+            color: #2d8659;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+        }
+
+        .spa-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 15px 40px;
+            background-color: #2d8659;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(45, 134, 89, 0.3);
+        }
+
+        .spa-button:hover {
+            background-color: #1f5e3f;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(45, 134, 89, 0.4);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="index.html">Pawtree</a>
-            </div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="giftideas.html">Gift Ideas</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="top-link">
+        <a href="https://pawtree.com/MyPetPeace">https://pawtree.com/MyPetPeace</a>
+    </div>
 
-    <main>
-        <section class="hero">
-            <h1>Gift Ideas for Pet Lovers</h1>
-            <p>Find the perfect gift for the pet lover in your life</p>
-        </section>
+    <div class="container">
+        <h1>Christmas Gift Ideas For Your Bestie</h1>
 
-        <section class="gift-categories">
-            <div class="container">
-                <h2>Browse by Occasion</h2>
-                <div class="categories-grid">
-                    <div class="category-card">
-                        <img src="images/birthday.webp" alt="Birthday Gifts">
-                        <h3>Birthday Gifts</h3>
-                        <p>Celebrate their special day with premium pet products</p>
-                        <a href="#birthday" class="btn">View Ideas</a>
-                    </div>
-                    <div class="category-card">
-                        <img src="images/holiday.webp" alt="Holiday Gifts">
-                        <h3>Holiday Gifts</h3>
-                        <p>Perfect presents for the holiday season</p>
-                        <a href="#holiday" class="btn">View Ideas</a>
-                    </div>
-                    <div class="category-card">
-                        <img src="images/thankyou.webp" alt="Thank You Gifts">
-                        <h3>Thank You Gifts</h3>
-                        <p>Show your appreciation with thoughtful pet gifts</p>
-                        <a href="#thankyou" class="btn">View Ideas</a>
-                    </div>
-                    <div class="category-card">
-                        <img src="images/justbecause.webp" alt="Just Because Gifts">
-                        <h3>Just Because</h3>
-                        <p>Surprise them with something special</p>
-                        <a href="#justbecause" class="btn">View Ideas</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <a href="https://pawtree.com/MyPetPeace/products/2298" class="image-link">
+            <img src="hd christmas (1).webp" alt="Christmas Gift Ideas" class="christmas-image">
+        </a>
 
-        <section id="birthday" class="gift-section">
-            <div class="container">
-                <h2>Birthday Gift Ideas</h2>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <img src="images/premium-treats.webp" alt="Premium Treats">
-                        <h3>Premium Treat Collection</h3>
-                        <p>A delightful assortment of our best-selling treats</p>
-                        <span class="price">$45.00</span>
-                        <a href="products.html" class="btn">Shop Now</a>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/gift-basket.webp" alt="Gift Basket">
-                        <h3>Ultimate Pet Gift Basket</h3>
-                        <p>Complete with treats, toys, and grooming essentials</p>
-                        <span class="price">$89.99</span>
-                        <a href="products.html" class="btn">Shop Now</a>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/subscription.webp" alt="Subscription Box">
-                        <h3>Monthly Subscription Box</h3>
-                        <p>The gift that keeps on giving all year long</p>
-                        <span class="price">$35.00/month</span>
-                        <a href="products.html" class="btn">Shop Now</a>
-                    </div>
+        <div class="bestie-spa-section">
+            <div class="spa-content">
+                <div class="spa-image">
+                    <a href="https://pawtree.com/MyPetPeace/myrecommendation/Treat-Yourbestie-and-Treat-Someoneelsesbestie">
+                        <img src="dogcatspa.jpg" alt="Dog and Cat enjoying spa" class="spa-cartoon">
+                    </a>
                 </div>
-            </div>
-        </section>
-
-        <section id="holiday" class="gift-section">
-            <div class="container">
-                <h2>Holiday Gift Ideas</h2>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <img src="images/holiday-bundle.webp" alt="Holiday Bundle">
-                        <h3>Holiday Celebration Bundle</h3>
-                        <p>Everything needed for a festive pet celebration</p>
-                        <span class="price">$65.00</span>
-                        <a href="products.html" class="btn">Shop Now</a>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/winter-treats.webp" alt="Winter Treats">
-                        <h3>Winter Wonderland Treats</h3>
-                        <p>Seasonal flavors your pets will love</p>
-                        <span class="price">$29.99</span>
-                        <a href="products.html" class="btn">Shop Now</a>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/cozy-gift.webp" alt="Cozy Gift Set">
-                        <h3>Cozy Comfort Gift Set</h3>
-                        <p>Keep pets warm and happy this winter</p>
-                        <span class="price">$54.99</span>
-                        <a href="products.html" class="btn">Shop Now</a>
-                    </div>
+                <div class="spa-text">
+                    <h2>Treat Your Bestie and Give Them a Verry Merry BestieSpa Christmas</h2>
+                    <a href="https://pawtree.com/MyPetPeace/myrecommendation/Treat-Yourbestie-and-Treat-Someoneelsesbestie" class="spa-button">BestieSpaTreat</a>
                 </div>
-            </div>
-        </section>
-
-        <section id="thankyou" class="gift-section">
-            <div class="container">
-                <h2>Thank You Gift Ideas</h2>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <img src="images/sampler-pack.webp" alt="Sampler Pack">
-                        <h3>Gourmet Sampler Pack</h3>
-                        <p>Let them try a variety of our premium products</p>
-                        <span class="price">$39.99</span>
-                        <a href="products.html" class="btn">Shop Now</a>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/wellness-kit.webp" alt="Wellness Kit">
-                        <h3>Pet Wellness Kit</h3>
-                        <p>Support their pet's health and happiness</p>
-                        <span class="price">$49.99</span>
-                        <a href="products.html" class="btn">Shop Now</a>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/gift-card.webp" alt="Gift Card">
-                        <h3>Pawtree Gift Card</h3>
-                        <p>Let them choose their favorites</p>
-                        <span class="price">Any Amount</span>
-                        <a href="products.html" class="btn">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="justbecause" class="gift-section">
-            <div class="container">
-                <h2>Just Because Gift Ideas</h2>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <img src="images/surprise-box.webp" alt="Surprise Box">
-                        <h3>Mystery Surprise Box</h3>
-                        <p>A fun surprise for pets and their owners</p>
-                        <span class="price">$34.99</span>
-                        <a href="products.html" class="btn">Shop Now</a>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/starter-kit.webp" alt="Starter Kit">
-                        <h3>New Pet Starter Kit</h3>
-                        <p>Perfect for welcoming a new furry friend</p>
-                        <span class="price">$59.99</span>
-                        <a href="products.html" class="btn">Shop Now</a>
-                    </div>
-                    <div class="product-card">
-                        <img src="images/pamper-package.webp" alt="Pamper Package">
-                        <h3>Pamper & Play Package</h3>
-                        <p>Spoil their pet with premium treats and toys</p>
-                        <span class="price">$44.99</span>
-                        <a href="products.html" class="btn">Shop Now</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="gift-guide">
-            <div class="container">
-                <h2>Gift Giving Tips</h2>
-                <div class="tips-grid">
-                    <div class="tip-card">
-                        <i class="icon">🎁</i>
-                        <h3>Personalize It</h3>
-                        <p>Add a personal touch with custom gift wrapping and a heartfelt message</p>
-                    </div>
-                    <div class="tip-card">
-                        <i class="icon">🐾</i>
-                        <h3>Know Their Pet</h3>
-                        <p>Consider the pet's size, age, and dietary needs when selecting products</p>
-                    </div>
-                    <div class="tip-card">
-                        <i class="icon">📦</i>
-                        <h3>Bundle & Save</h3>
-                        <p>Create custom gift bundles to maximize value and variety</p>
-                    </div>
-                    <div class="tip-card">
-                        <i class="icon">⭐</i>
-                        <h3>Quality Matters</h3>
-                        <p>Choose premium, natural products they can feel good about</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="cta-section">
-            <div class="container">
-                <h2>Need Help Choosing?</h2>
-                <p>Our team is here to help you find the perfect gift</p>
-                <a href="contact.html" class="btn btn-large">Contact Us</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>About Pawtree</h3>
-                    <p>Premium pet nutrition and products delivered to your door.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="giftideas.html">Gift Ideas</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Connect With Us</h3>
-                    <div class="social-links">
-                        <a href="#">Facebook</a>
-                        <a href="#">Instagram</a>
-                        <a href="#">Twitter</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Pawtree. All rights reserved.</p>
             </div>
         </div>
-    </footer>
+
+        <div class="content-section">
+            <h2>Give the Gift of Giving by Giving Back</h2>
+            
+            <div class="program-section">
+                <h3>🐾 Best Friends Animal Society</h3>
+                <p>Donate to support a special bestie friend by supporting Best Friends Animal Society where your generous donation helps support Best Friends Animal Society, the leading animal welfare organization working to save the lives of homeless pets across America. Every donation helps provide critical care, shelter, and love to animals in need.</p>
+            </div>
+
+            <div class="program-section">
+                <h3>🎖️ Giving Wounded Vets a Second Chance Program</h3>
+                <p>Because we are deeply moved by the incredible work of Smoky Mountain Service Dogs, we are honored to support them in their efforts to enhance the physical and psychological quality of life for wounded veterans through professionally trained service dogs. These remarkable dogs provide independence, companionship, and renewed hope.</p>
+            </div>
+
+            <div class="program-section">
+                <h3>♻️ Driving Sustainable Impact</h3>
+                <p>We do our part in keeping the environment clean and healthy by using recycle-ready packaging to implementing a new shipping box designed to reduce waste, we are committed to continuing our path towards sustainability. Together, we can make a positive impact on our planet for future generations of pets and their people.</p>
+            </div>
+
+            <p style="text-align: center; margin-top: 30px;">Click this link to make a donation or purchase a product to make your charitable gift of giving contribution:</p>
+            <div style="text-align: center;">
+                <a href="https://pawtree.com/MyPetPeace/products/2293" class="link-button">Make a Contribution</a>
+            </div>
+
+            <div class="plush-link">
+                <p>or send a <a href="https://pawtree.com/MyPetPeace/products/2293">myPlushToy Gift Box</a></p>
+            </div>
+        </div>
+
+        <div class="donate-section">
+            <a href="https://pawtree.com/MyPetPeace/products/2293" class="donate-link">
+                <img src="public donate (1).webp" alt="Donate Now" class="donate-image">
+            </a>
+        </div>
+
+        <div class="thank-you">
+            <p>Thank You for visiting our site! Click Shop Now and enjoy your Christmas Shopping with Pawtree/MyPetPeace.</p>
+        </div>
+
+        <a href="https://pawtree.com/MyPetPeace" class="shop-now-btn">SHOP NOW</a>
+    </div>
 </body>
 </html>
