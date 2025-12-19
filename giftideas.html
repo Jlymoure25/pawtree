@@ -3,393 +3,320 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gift Ideas - PawTree Pet Products</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: #2c5f2d;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: #a8d5a8;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #2c5f2d 0%, #4a8f4e 100%);
-            color: white;
-            padding: 8rem 2rem 4rem;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Main Content */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        .intro {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .intro h2 {
-            color: #2c5f2d;
-            margin-bottom: 1rem;
-        }
-
-        /* Gift Categories */
-        .gift-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .category-card {
-            background: white;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
-        .category-card h3 {
-            color: #2c5f2d;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .category-card ul {
-            list-style-position: inside;
-            color: #666;
-        }
-
-        .category-card li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Product Grid */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 1.5rem;
-        }
-
-        .product-info h3 {
-            color: #2c5f2d;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-
-        .product-info p {
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .price {
-            font-weight: bold;
-            color: #2c5f2d;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #2c5f2d;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #1f4520;
-        }
-
-        /* Gift Guide Section */
-        .gift-guide {
-            background-color: #f9f9f9;
-            padding: 3rem;
-            border-radius: 10px;
-            margin-bottom: 3rem;
-        }
-
-        .gift-guide h2 {
-            color: #2c5f2d;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .guide-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .guide-item {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-left: 4px solid #2c5f2d;
-        }
-
-        .guide-item h3 {
-            color: #2c5f2d;
-            margin-bottom: 0.5rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #2c5f2d;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            }
-        }
-    </style>
+    <title>Gift Ideas - My Pet Peace</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <nav>
-            <a href="index.html" class="logo">🐾 PawTree</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="giftideas.html">Gift Ideas</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="My Pet Peace Logo">
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="giftideas.html" class="active">Gift Ideas</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Perfect Gift Ideas for Pet Lovers</h1>
-        <p>Discover thoughtful gifts that will make tails wag and hearts purr with joy</p>
-    </section>
-
-    <div class="container">
-        <div class="intro">
-            <h2>Find the Perfect Gift</h2>
-            <p>Whether you're shopping for a new pet parent, celebrating a pet's birthday, or just want to show you care, we have the perfect gift ideas for every occasion.</p>
-        </div>
-
-        <div class="gift-categories">
-            <div class="category-card">
-                <h3>🎁 For New Pet Parents</h3>
-                <ul>
-                    <li>Starter nutrition packages</li>
-                    <li>Essential grooming kits</li>
-                    <li>Training treat bundles</li>
-                    <li>Wellness starter sets</li>
-                </ul>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Gift Ideas for Pet Lovers</h1>
+                <p>Find the perfect gift for the special pet owner in your life</p>
             </div>
+        </section>
 
-            <div class="category-card">
-                <h3>🎂 Birthday Celebrations</h3>
-                <ul>
-                    <li>Special birthday treats</li>
-                    <li>Festive toy collections</li>
-                    <li>Gourmet food samplers</li>
-                    <li>Personalized gift baskets</li>
-                </ul>
-            </div>
-
-            <div class="category-card">
-                <h3>❤️ Just Because</h3>
-                <ul>
-                    <li>Premium supplement packages</li>
-                    <li>Luxury spa products</li>
-                    <li>Interactive toy sets</li>
-                    <li>Healthy snack assortments</li>
-                </ul>
-            </div>
-        </div>
-
-        <h2 style="color: #2c5f2d; text-align: center; margin-bottom: 2rem;">Featured Gift Products</h2>
-
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?w=500" alt="Gift Basket" class="product-image">
-                <div class="product-info">
-                    <h3>Ultimate Pet Gift Basket</h3>
-                    <p>A curated selection of our best-selling products perfect for any pet</p>
-                    <div class="price">$89.99</div>
-                    <a href="https://pawtree.com/MyPetPeace/product/MY-pawBox-TM-Plush-Toy-Limited-Edition-2469BF" class="btn">Shop Now</a>
+        <section class="gift-categories">
+            <div class="container">
+                <h2>Browse by Occasion</h2>
+                <div class="category-grid">
+                    <div class="category-card">
+                        <img src="images/birthday-gifts.jpg" alt="Birthday Gifts">
+                        <h3>Birthday Gifts</h3>
+                        <p>Celebrate their special day with pawsome presents</p>
+                    </div>
+                    <div class="category-card">
+                        <img src="images/holiday-gifts.jpg" alt="Holiday Gifts">
+                        <h3>Holiday Gifts</h3>
+                        <p>Festive finds for every holiday celebration</p>
+                    </div>
+                    <div class="category-card">
+                        <img src="images/thank-you-gifts.jpg" alt="Thank You Gifts">
+                        <h3>Thank You Gifts</h3>
+                        <p>Show appreciation with thoughtful pet-themed gifts</p>
+                    </div>
+                    <div class="category-card">
+                        <img src="images/just-because.jpg" alt="Just Because">
+                        <h3>Just Because</h3>
+                        <p>Surprise them any day with something special</p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=500" alt="Premium Treats" class="product-image">
-                <div class="product-info">
-                    <h3>Gourmet Treat Collection</h3>
-                    <p>Assorted healthy and delicious treats your pet will love</p>
-                    <div class="price">$34.99</div>
-                    <a href="https://pawtree.com/MyPetPeace/products/treats" class="btn">Shop Now</a>
+        <section class="featured-gifts">
+            <div class="container">
+                <h2>Top Gift Picks</h2>
+                <div class="gift-grid">
+                    <div class="gift-item">
+                        <div class="gift-image">
+                            <img src="images/gift-basket.jpg" alt="Deluxe Pet Gift Basket">
+                            <span class="badge">Best Seller</span>
+                        </div>
+                        <div class="gift-details">
+                            <h3>Deluxe Pet Gift Basket</h3>
+                            <p class="price">$79.99</p>
+                            <p class="description">A curated collection of premium treats and toys</p>
+                            <a href="https://pawtree.com/MyPetPeace/products/gift-basket" class="btn">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="gift-item">
+                        <div class="gift-image">
+                            <img src="images/personalized-collar.jpg" alt="Personalized Collar">
+                            <span class="badge">Popular</span>
+                        </div>
+                        <div class="gift-details">
+                            <h3>Personalized Collar</h3>
+                            <p class="price">$34.99</p>
+                            <p class="description">Custom engraved with your pet's name</p>
+                            <a href="https://pawtree.com/MyPetPeace/products/collar" class="btn">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="gift-item">
+                        <div class="gift-image">
+                            <img src="images/treat-sampler.jpg" alt="Gourmet Treat Sampler">
+                        </div>
+                        <div class="gift-details">
+                            <h3>Gourmet Treat Sampler</h3>
+                            <p class="price">$44.99</p>
+                            <p class="description">Assorted healthy and delicious treats</p>
+                            <a href="https://pawtree.com/MyPetPeace/products/treats" class="btn">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="gift-item">
+                        <div class="gift-image">
+                            <img src="images/toy-bundle.jpg" alt="Interactive Toy Bundle">
+                            <span class="badge">New</span>
+                        </div>
+                        <div class="gift-details">
+                            <h3>Interactive Toy Bundle</h3>
+                            <p class="price">$54.99</p>
+                            <p class="description">Hours of fun with engaging toys</p>
+                            <a href="https://pawtree.com/MyPetPeace/products/toys" class="btn">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="gift-item">
+                        <div class="gift-image">
+                            <img src="images/spa-package.jpg" alt="Pet Spa Package">
+                        </div>
+                        <div class="gift-details">
+                            <h3>Pet Spa Package</h3>
+                            <p class="price">$64.99</p>
+                            <p class="description">Pamper your pet with grooming essentials</p>
+                            <a href="https://pawtree.com/MyPetPeace/products/spa" class="btn">Shop Now</a>
+                        </div>
+                    </div>
+                    <div class="gift-item">
+                        <div class="gift-image">
+                            <img src="images/subscription-box.jpg" alt="Monthly Subscription Box">
+                            <span class="badge">Gift That Keeps Giving</span>
+                        </div>
+                        <div class="gift-details">
+                            <h3>Monthly Subscription Box</h3>
+                            <p class="price">Starting at $29.99/mo</p>
+                            <p class="description">A monthly surprise of treats and toys</p>
+                            <a href="https://pawtree.com/MyPetPeace/products/subscription" class="btn">Shop Now</a>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=500" alt="Wellness Bundle" class="product-image">
-                <div class="product-info">
-                    <h3>Wellness Starter Kit</h3>
-                    <p>Everything needed to keep your pet healthy and happy</p>
-                    <div class="price">$124.99</div>
-                    <a href="https://pawtree.com/MyPetPeace/products/wellness" class="btn">Shop Now</a>
+        <section class="gift-guide">
+            <div class="container">
+                <h2>Gift Guide by Price</h2>
+                <div class="price-ranges">
+                    <div class="price-range">
+                        <h3>Under $25</h3>
+                        <ul>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/small-treats">Small Treat Bags</a></li>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/single-toy">Single Toys</a></li>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/bandana">Pet Bandanas</a></li>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/bowl">Food Bowls</a></li>
+                        </ul>
+                    </div>
+                    <div class="price-range">
+                        <h3>$25 - $50</h3>
+                        <ul>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/treat-bundle">Treat Bundles</a></li>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/toy-set">Toy Sets</a></li>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/leash">Premium Leashes</a></li>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/bed">Cozy Beds</a></li>
+                        </ul>
+                    </div>
+                    <div class="price-range">
+                        <h3>$50 - $100</h3>
+                        <ul>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/deluxe-basket">Deluxe Gift Baskets</a></li>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/premium-toys">Premium Toy Collections</a></li>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/grooming-kit">Complete Grooming Kits</a></li>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/travel-set">Travel Accessory Sets</a></li>
+                        </ul>
+                    </div>
+                    <div class="price-range">
+                        <h3>$100+</h3>
+                        <ul>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/ultimate-basket">Ultimate Gift Baskets</a></li>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/year-subscription">Year Subscription</a></li>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/luxury-bed">Luxury Pet Beds</a></li>
+                            <li><a href="https://pawtree.com/MyPetPeace/products/complete-collection">Complete Product Collections</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1534361960057-19889db9621e?w=500" alt="Toy Bundle" class="product-image">
-                <div class="product-info">
-                    <h3>Interactive Toy Bundle</h3>
-                    <p>Keep your pet entertained with this fun toy collection</p>
-                    <div class="price">$45.99</div>
-                    <a href="https://pawtree.com/MyPetPeace/products/toys" class="btn">Shop Now</a>
+        <section class="gift-tips">
+            <div class="container">
+                <h2>Gift Giving Tips</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <div class="tip-icon">🎁</div>
+                        <h3>Know Their Pet</h3>
+                        <p>Consider the pet's size, age, and preferences when selecting gifts. What works for a puppy might not suit a senior dog.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">🏷️</div>
+                        <h3>Check Ingredients</h3>
+                        <p>For treats and food items, review the ingredient list to ensure they're safe and healthy for the pet.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">📦</div>
+                        <h3>Gift Wrapping</h3>
+                        <p>We offer complimentary gift wrapping and personalized messages for all gift orders.</p>
+                    </div>
+                    <div class="tip-card">
+                        <div class="tip-icon">💝</div>
+                        <h3>Gift Cards Available</h3>
+                        <p>Not sure what to choose? Gift cards let pet owners select exactly what they want.</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="gift-guide">
-            <h2>Gift Guide by Budget</h2>
-            <div class="guide-grid">
-                <div class="guide-item">
-                    <h3>Under $25</h3>
-                    <p>Perfect stocking stuffers and small tokens of appreciation including treats, chew toys, and grooming accessories.</p>
-                </div>
-
-                <div class="guide-item">
-                    <h3>$25 - $50</h3>
-                    <p>Thoughtful mid-range gifts like nutrition supplements, toy sets, and specialty treats that show you care.</p>
-                </div>
-
-                <div class="guide-item">
-                    <h3>$50 - $100</h3>
-                    <p>Premium gift options including wellness bundles, gourmet food collections, and deluxe grooming kits.</p>
-                </div>
-
-                <div class="guide-item">
-                    <h3>$100+</h3>
-                    <p>Luxury gifts for the pampered pet including complete nutrition systems, spa packages, and custom gift baskets.</p>
+        <section class="seasonal-gifts">
+            <div class="container">
+                <h2>Seasonal Favorites</h2>
+                <div class="seasonal-grid">
+                    <div class="seasonal-item">
+                        <img src="images/spring-gifts.jpg" alt="Spring Collection">
+                        <div class="seasonal-content">
+                            <h3>Spring Collection</h3>
+                            <p>Fresh and fun items for outdoor adventures</p>
+                            <a href="https://pawtree.com/MyPetPeace/collections/spring" class="btn-outline">Explore Spring</a>
+                        </div>
+                    </div>
+                    <div class="seasonal-item">
+                        <img src="images/summer-gifts.jpg" alt="Summer Collection">
+                        <div class="seasonal-content">
+                            <h3>Summer Collection</h3>
+                            <p>Cool treats and water toys for hot days</p>
+                            <a href="https://pawtree.com/MyPetPeace/collections/summer" class="btn-outline">Explore Summer</a>
+                        </div>
+                    </div>
+                    <div class="seasonal-item">
+                        <img src="images/fall-gifts.jpg" alt="Fall Collection">
+                        <div class="seasonal-content">
+                            <h3>Fall Collection</h3>
+                            <p>Cozy items for crisp autumn days</p>
+                            <a href="https://pawtree.com/MyPetPeace/collections/fall" class="btn-outline">Explore Fall</a>
+                        </div>
+                    </div>
+                    <div class="seasonal-item">
+                        <img src="images/winter-gifts.jpg" alt="Winter Collection">
+                        <div class="seasonal-content">
+                            <h3>Winter Collection</h3>
+                            <p>Warm and festive gifts for the holidays</p>
+                            <a href="https://pawtree.com/MyPetPeace/collections/winter" class="btn-outline">Explore Winter</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div style="background-color: #e8f5e9; padding: 2rem; border-radius: 10px; text-align: center;">
-            <h2 style="color: #2c5f2d; margin-bottom: 1rem;">Need Help Choosing?</h2>
-            <p style="margin-bottom: 1.5rem;">Our pet nutrition experts are here to help you find the perfect gift for your furry friend!</p>
-            <a href="contact.html" class="btn">Contact Us</a>
-        </div>
-    </div>
+        <section class="testimonials">
+            <div class="container">
+                <h2>What Gift Recipients Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"The gift basket I received was absolutely perfect! My dog loved every single treat, and the toys are still his favorites months later."</p>
+                        <p class="testimonial-author">- Sarah M.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"Best gift I've ever received for my cats! The quality of the products is outstanding, and the presentation was beautiful."</p>
+                        <p class="testimonial-author">- Michael R.</p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p class="testimonial-text">"The subscription box has been such a joy! Every month brings new excitement for both me and my puppy. Highly recommend!"</p>
+                        <p class="testimonial-author">- Jennifer L.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Find the Perfect Gift?</h2>
+                <p>Browse our complete collection or contact us for personalized gift recommendations</p>
+                <div class="cta-buttons">
+                    <a href="products.html" class="btn btn-primary">Shop All Products</a>
+                    <a href="contact.html" class="btn btn-secondary">Get Gift Advice</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 PawTree Pet Products. All rights reserved.</p>
-        <p>Nurturing pets naturally, one paw at a time.</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About My Pet Peace</h3>
+                    <p>Providing quality pet products and peace of mind for pet owners everywhere.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="giftideas.html">Gift Ideas</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect With Us</h3>
+                    <div class="social-links">
+                        <a href="https://facebook.com/mypetpeace" target="_blank">Facebook</a>
+                        <a href="https://instagram.com/mypetpeace" target="_blank">Instagram</a>
+                        <a href="https://twitter.com/mypetpeace" target="_blank">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 My Pet Peace. All rights reserved.</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
