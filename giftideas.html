@@ -3,208 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Holiday Gift Ideas - PawTree</title>
+    <title>Christmas Gift Ideas For Your Bestie - PawTree</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #f5f5f5 0%, #e8f5e9 100%);
             padding: 20px;
-            border: 20px solid #2d8659;
+            border: 10px solid #2d8659;
             min-height: 100vh;
         }
-
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            max-width: 800px;
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px 24px;
+            margin: 40px auto;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
         }
-
         h1 {
             text-align: center;
             color: #c41e3a;
-            font-size: 3em;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            font-family: 'Georgia', serif;
+            font-size: 2.3em;
+            margin-bottom: 0.15em;
+            letter-spacing: 2px;
         }
-
         .subtitle {
             text-align: center;
             color: #2d8659;
-            font-size: 1.5em;
-            margin-bottom: 40px;
+            font-size: 1.45em;
+            margin-bottom: 23px;
             font-style: italic;
         }
-
-        .gift-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
+        .center-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 22px 0 30px 0;
         }
-
-        .gift-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
-            border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 3px solid #2d8659;
+        .big-section {
+            font-size: 1.23em;
+            margin-bottom: 34px;
         }
-
-        .gift-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(45, 134, 89, 0.3);
-        }
-
-        .gift-card h2 {
-            color: #c41e3a;
-            margin-bottom: 15px;
-            font-size: 1.8em;
-            border-bottom: 2px solid #2d8659;
-            padding-bottom: 10px;
-        }
-
-        .gift-card p {
-            color: #333;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .gift-card ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        .gift-card li {
-            color: #555;
-            margin-bottom: 8px;
-            line-height: 1.5;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #c41e3a 0%, #a01830 100%);
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(196, 30, 58, 0.3);
-            margin-top: 10px;
-        }
-
-        .cta-button:hover {
-            background: linear-gradient(135deg, #a01830 0%, #c41e3a 100%);
-            transform: scale(1.05);
-            box-shadow: 0 6px 15px rgba(196, 30, 58, 0.4);
-        }
-
-        .charity-section {
-            background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px 0;
-            border: 3px solid #ff9800;
-            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.2);
-        }
-
-        .charity-section h2 {
-            color: #e65100;
-            margin-bottom: 20px;
-            font-size: 2em;
-            text-align: center;
-        }
-
-        .charity-content {
-            color: #5d4037;
-            line-height: 1.8;
-        }
-
-        .charity-content p {
-            margin-bottom: 15px;
-        }
-
-        .charity-content strong {
-            color: #e65100;
-        }
-
-        .snowflake {
-            position: fixed;
-            top: -10px;
-            color: #2d8659;
-            font-size: 1.5em;
-            animation: fall linear infinite;
-            z-index: 1;
-        }
-
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) rotate(360deg);
-            }
-        }
-
-        .special-offer {
-            background: linear-gradient(135deg, #c41e3a 0%, #a01830 100%);
-            color: white;
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            margin: 30px 0;
-            font-size: 1.2em;
-            box-shadow: 0 5px 15px rgba(196, 30, 58, 0.4);
-        }
-
-        .bestiespa-section {
-            background: linear-gradient(135deg, #e1f5fe 0%, #b3e5fc 100%);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px 0;
-            border: 3px solid #0288d1;
-            box-shadow: 0 5px 15px rgba(2, 136, 209, 0.2);
-        }
-
-        .bestiespa-section h2 {
-            color: #01579b;
-            margin-bottom: 20px;
-            font-size: 2em;
-            text-align: center;
-        }
-
-        .bestiespa-content {
-            color: #263238;
-            line-height: 1.8;
-        }
-
-        .bestiespa-content p {
-            margin-bottom: 15px;
-        }
-
-        .bestiespa-content ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
-        }
-
-        .bestiespa-content li {
+        .section-title {
+            font-size: 1.3em;
             margin-bottom: 10px;
+            color: #c41e3a;
+            font-weight: bold;
+            margin-top: 35px;
         }
-
-        .bestiespa-content strong {
-            color: #01579b;
+        ul {
+            margin-left: 16px;
+            margin-bottom: 16px;
         }
-
-        /* Exit Intent Popup Styles */
-        .exit-popup-overlay {
+        .charity {
+            margin-top: 30px;
+            background: linear-gradient(90deg, #f9fbe7 0%, #f5e8e9 100%);
+            padding: 24px 18px;
+            border-radius: 12px;
+            border-left: 6px solid #2d8659;
+        }
+        .charity h2 {
+            color: #2d8659;
+            font-size: 1.23em;
+            margin-bottom: 8px;
+        }
+        .cta-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+            margin: 30px 0 6px 0;
+        }
+        .cta-button, .donate-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #c41e3a, #a01830 75%);
+            color: white;
+            padding: 12px 38px;
+            text-decoration: none;
+            border-radius: 32px;
+            font-weight: bold;
+            font-size: 1.15em;
+            transition: all 0.2s ease;
+            margin-bottom: 7px;
+            border: none;
+        }
+        .cta-button:hover, .donate-button:hover {
+            background: linear-gradient(90deg, #a01830, #c41e3a 80%);
+            transform: scale(1.06);
+        }
+        .footer {
+            text-align: center;
+            color: #2d8659;
+            font-size: 1.1em;
+            margin-top: 40px;
+            margin-bottom: 0;
+        }
+        .italic { font-style: italic; }
+        .section-icon {
+            margin-right: 7px;
+            font-size: 1.17em;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 15px 2vw;}
+            h1 { font-size: 1.25em; }
+        }
+        /* Popup styles reused from previous code */
+        .exit-popup-overlay, .congrats-popup-overlay {
             display: none;
             position: fixed;
             top: 0;
@@ -216,12 +120,10 @@
             justify-content: center;
             align-items: center;
         }
-
-        .exit-popup-overlay.active {
+        .exit-popup-overlay.active, .congrats-popup-overlay.active {
             display: flex;
         }
-
-        .exit-popup {
+        .exit-popup, .congrats-popup {
             background: linear-gradient(135deg, #c41e3a 0%, #a01830 100%);
             border-radius: 20px;
             padding: 40px;
@@ -232,14 +134,15 @@
             border: 5px solid #ffd700;
             animation: popupBounce 0.5s ease;
         }
-
+        .congrats-popup {
+            background: linear-gradient(135deg, #2d8659 0%, #1e5a3d 100%);
+        }
         @keyframes popupBounce {
             0% { transform: scale(0.5); opacity: 0; }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1);}
+            100% { transform: scale(1); opacity: 1;}
         }
-
-        .exit-popup-close {
+        .exit-popup-close, .congrats-popup-close {
             position: absolute;
             top: 10px;
             right: 15px;
@@ -250,27 +153,23 @@
             border: none;
             font-weight: bold;
         }
-
-        .exit-popup-close:hover {
+        .exit-popup-close:hover, .congrats-popup-close:hover { color: #ffd700; }
+        .exit-popup h2, .congrats-popup h2 {
             color: #ffd700;
-        }
-
-        .exit-popup h2 {
-            color: #ffd700;
-            font-size: 3em;
+            font-size: 2.4em;
             margin-bottom: 20px;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
             font-family: 'Georgia', serif;
         }
-
-        .exit-popup p {
+        .exit-popup p, .congrats-popup p {
             color: white;
-            font-size: 1.8em;
+            font-size: 1.5em;
             margin-bottom: 30px;
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-
+        .congrats-popup h2 { font-size:2.6em;}
+        .congrats-popup p { font-size:1.2em;}
         .exit-popup-button {
             display: inline-block;
             background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
@@ -279,303 +178,67 @@
             text-decoration: none;
             border-radius: 35px;
             font-weight: bold;
-            font-size: 1.5em;
+            font-size: 1.35em;
             transition: all 0.3s ease;
             box-shadow: 0 8px 20px rgba(255, 215, 0, 0.4);
             border: 3px solid white;
         }
-
         .exit-popup-button:hover {
             background: linear-gradient(135deg, #ffed4e 0%, #ffd700 100%);
             transform: scale(1.1);
             box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6);
         }
-
-        .santa-hat {
-            font-size: 4em;
-            margin-bottom: 20px;
-        }
-
-        /* Congratulations Popup Styles */
-        .congrats-popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .congrats-popup-overlay.active {
-            display: flex;
-        }
-
-        .congrats-popup {
-            background: linear-gradient(135deg, #2d8659 0%, #1e5a3d 100%);
-            border-radius: 20px;
-            padding: 50px;
-            max-width: 600px;
-            text-align: center;
-            position: relative;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            border: 5px solid #ffd700;
-            animation: popupBounce 0.5s ease;
-        }
-
-        .congrats-popup h2 {
-            color: #ffd700;
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-        }
-
-        .congrats-popup p {
-            color: white;
-            font-size: 1.8em;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            line-height: 1.5;
-        }
-
-        .congrats-popup-close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 30px;
-            color: white;
-            cursor: pointer;
-            background: none;
-            border: none;
-            font-weight: bold;
-        }
-
-        .congrats-popup-close:hover {
-            color: #ffd700;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-
-            .subtitle {
-                font-size: 1.2em;
-            }
-
-            .gift-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .exit-popup {
-                margin: 20px;
-                padding: 30px 20px;
-            }
-
-            .exit-popup h2 {
-                font-size: 2em;
-            }
-
-            .exit-popup p {
-                font-size: 1.3em;
-            }
-
-            .exit-popup-button {
-                padding: 15px 35px;
-                font-size: 1.2em;
-            }
-
-            .congrats-popup {
-                margin: 20px;
-                padding: 30px 20px;
-            }
-
-            .congrats-popup h2 {
-                font-size: 2.5em;
-            }
-
-            .congrats-popup p {
-                font-size: 1.3em;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Snowflakes -->
-    <div class="snowflake" style="left: 10%; animation-duration: 10s;">❄</div>
-    <div class="snowflake" style="left: 20%; animation-duration: 12s;">❄</div>
-    <div class="snowflake" style="left: 30%; animation-duration: 8s;">❄</div>
-    <div class="snowflake" style="left: 40%; animation-duration: 14s;">❄</div>
-    <div class="snowflake" style="left: 50%; animation-duration: 11s;">❄</div>
-    <div class="snowflake" style="left: 60%; animation-duration: 9s;">❄</div>
-    <div class="snowflake" style="left: 70%; animation-duration: 13s;">❄</div>
-    <div class="snowflake" style="left: 80%; animation-duration: 10s;">❄</div>
-    <div class="snowflake" style="left: 90%; animation-duration: 12s;">❄</div>
-
     <div class="container">
-        <h1>🎄 Holiday Gift Ideas 🎄</h1>
-        <p class="subtitle">Spread joy and tail wags this season!</p>
-
-        <div class="special-offer">
-            ✨ Special Holiday Offer: Free Shipping on Orders Over $50! ✨
+        <h1>🎄 Christmas Gift Ideas For Your Bestie 🎄</h1>
+        <div class="subtitle">Gift Ideas For Pets & the Gift of Giving</div>
+        <div class="center-img">
+            <!-- Example stock image, replace with your own as needed -->
+            <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d?auto=format&fit=crop&w=400&q=80" alt="Dog and Cat enjoying spa" style="width:80%; max-width:380px; border-radius:10px;">
         </div>
 
-        <div class="gift-grid">
-            <div class="gift-card">
-                <h2>🎁 Starter Packs</h2>
-                <p>Perfect for new pet parents or anyone wanting to try our premium products!</p>
-                <ul>
-                    <li>Curated selection of our best-selling items</li>
-                    <li>Great value bundles</li>
-                    <li>Perfect introduction to PawTree</li>
-                    <li>Multiple options for dogs and cats</li>
-                </ul>
-                <a href="https://pawtree.com/MyPetPeace/enrollment/packs" class="cta-button">Shop Starter Packs</a>
-            </div>
-
-            <div class="gift-card">
-                <h2>🦴 Premium Nutrition</h2>
-                <p>Give the gift of health with our top-quality pet food and supplements!</p>
-                <ul>
-                    <li>Customized meal plans</li>
-                    <li>High-quality ingredients</li>
-                    <li>Supports overall pet health</li>
-                    <li>Loved by picky eaters</li>
-                </ul>
-                <a href="https://pawtree.com/MyPetPeace/shop/food" class="cta-button">Explore Nutrition</a>
-            </div>
-
-            <div class="gift-card">
-                <h2>🧸 Toys & Treats</h2>
-                <p>Bring extra joy with fun toys and delicious treats!</p>
-                <ul>
-                    <li>Durable, engaging toys</li>
-                    <li>Healthy, tasty treats</li>
-                    <li>Perfect for training & bonding</li>
-                    <li>Safe for all breeds and sizes</li>
-                </ul>
-                <a href="https://pawtree.com/MyPetPeace/shop/treats" class="cta-button">Browse Toys & Treats</a>
-            </div>
-
-            <div class="gift-card">
-                <h2>💝 Gift Cards</h2>
-                <p>Can't decide? Let them choose their perfect gift!</p>
-                <ul>
-                    <li>Available in multiple denominations</li>
-                    <li>Never expires</li>
-                    <li>Easy to send digitally</li>
-                    <li>Perfect last-minute gift</li>
-                </ul>
-                <a href="https://pawtree.com/MyPetPeace/gift-cards" class="cta-button">Get Gift Card</a>
-            </div>
-
-            <div class="gift-card">
-                <h2>🌟 pawBox™ Subscription</h2>
-                <p>The gift that keeps on giving all year long!</p>
-                <ul>
-                    <li>Monthly surprise box of goodies</li>
-                    <li>Customized for your pet</li>
-                    <li>Toys, treats, and more</li>
-                    <li>Cancel anytime</li>
-                </ul>
-                <a href="https://pawtree.com/MyPetPeace/pawbox" class="cta-button">Subscribe Now</a>
-            </div>
-
-            <div class="gift-card">
-                <h2>🎀 Holiday Bundles</h2>
-                <p>Special curated bundles just for the holiday season!</p>
-                <ul>
-                    <li>Festive packaging</li>
-                    <li>Specially priced</li>
-                    <li>Limited edition items</li>
-                    <li>Ready to gift</li>
-                </ul>
-                <a href="https://pawtree.com/MyPetPeace/shop" class="cta-button">View Bundles</a>
-            </div>
+        <div class="big-section italic">
+            Treat Your Bestie and Give Them a Very Merry BestieSpa Christmas!<br>
+            BestieSpa Treats ~ PlushToys ~ and more for pampered pets.
         </div>
 
-        <!-- Charity Section -->
-        <div class="charity-section">
-            <h2>🐾 Give Back This Holiday Season 🐾</h2>
-            <div class="charity-content">
-                <p><strong>Make a difference while you shop!</strong></p>
-                <p>This holiday season, every purchase helps pets in need. PawTree is committed to supporting animal welfare organizations and rescue groups across the country.</p>
-                <p><strong>How Your Purchase Helps:</strong></p>
-                <ul>
-                    <li>A portion of every sale goes to animal rescue organizations</li>
-                    <li>We donate products to shelters and foster programs</li>
-                    <li>Support for spay/neuter initiatives</li>
-                    <li>Funding for emergency veterinary care for rescued animals</li>
-                </ul>
-                <p><strong>Featured Partner:</strong> This month, we're proud to support local animal shelters in your community. Together, we've helped over 10,000 pets find their forever homes!</p>
-                <p style="text-align: center; margin-top: 20px; font-size: 1.2em; color: #e65100;">
-                    <strong>When you give to your pet, you're also giving to pets in need. Thank you for making a difference! 🎁❤️</strong>
-                </p>
-            </div>
-        </div>
+        <div class="section-title"><span class="section-icon">🐾</span>Give the Gift of Giving by Giving Back</div>
 
-        <!-- BestieSpa Section -->
-        <div class="bestiespa-section">
-            <h2>🛁 BestieSpa™ - Premium Pet Grooming 🛁</h2>
-            <div class="bestiespa-content">
-                <p><strong>Pamper your pet with our luxurious BestieSpa grooming line!</strong></p>
-                <p>Give your furry friend the spa treatment they deserve with our premium grooming products. Made with natural ingredients and designed for sensitive skin, BestieSpa makes bath time a breeze!</p>
-                <p><strong>Why Choose BestieSpa:</strong></p>
-                <ul>
-                    <li><strong>Natural Ingredients:</strong> Gentle formulas with botanical extracts</li>
-                    <li><strong>pH Balanced:</strong> Specifically formulated for pets' skin</li>
-                    <li><strong>Amazing Scents:</strong> Long-lasting freshness without harsh chemicals</li>
-                    <li><strong>Professional Quality:</strong> Salon results at home</li>
-                    <li><strong>Safe & Effective:</strong> Hypoallergenic and tear-free options</li>
-                </ul>
-                <p><strong>Popular Products:</strong></p>
-                <ul>
-                    <li>BestieSpa Shampoo & Conditioner Sets</li>
-                    <li>Paw & Nose Balm</li>
-                    <li>Dental Care Products</li>
-                    <li>Ear Cleaning Solutions</li>
-                    <li>Grooming Tools & Accessories</li>
-                </ul>
-                <p style="text-align: center; margin-top: 20px;">
-                    <a href="https://pawtree.com/MyPetPeace/shop/bestiespa" class="cta-button">Explore BestieSpa Products</a>
-                </p>
-                <p style="text-align: center; margin-top: 15px; font-size: 1.1em; color: #01579b;">
-                    <strong>✨ Holiday Special: Buy 2 BestieSpa products, get 15% off! ✨</strong>
-                </p>
-            </div>
-        </div>
-
-        <div class="gift-card" style="background: linear-gradient(135deg, #c41e3a 0%, #a01830 100%); color: white; grid-column: 1 / -1;">
-            <h2 style="color: #ffd700; border-bottom-color: #ffd700;">🎅 Why Choose PawTree for Holiday Gifts? 🎅</h2>
-            <p style="color: white;">
-                At PawTree, we believe every pet deserves the best. Our products are made with premium ingredients, 
-                backed by science, and loved by pets everywhere. When you give a PawTree gift, you're giving health, 
-                happiness, and unconditional tail wags!
+        <div class="charity">
+            <h2>🐾 Best Friends Animal Society</h2>
+            <p>
+                Donate to support a special bestie friend by supporting Best Friends Animal Society where your generous donation helps support Best Friends Animal Society, the leading animal welfare organization working to save the lives of homeless pets across America. Every donation helps provide critical care, shelter, and love to animals in need.
             </p>
-            <ul style="color: white;">
-                <li>100% Satisfaction Guarantee</li>
-                <li>Fast, reliable shipping</li>
-                <li>Expert pet nutrition advice</li>
-                <li>Personalized recommendations</li>
-                <li>Supporting a company that gives back</li>
-            </ul>
-        </div>
-
-        <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); border-radius: 15px; border: 3px dashed #2d8659;">
-            <h2 style="color: #2d8659; margin-bottom: 20px;">🎄 Need Help Choosing the Perfect Gift? 🎄</h2>
-            <p style="color: #1b5e20; font-size: 1.2em; margin-bottom: 20px;">
-                I'm here to help! As your PawTree Pet Pro, I can provide personalized recommendations 
-                based on your pet's specific needs and preferences.
+            <div class="section-title">🎖️ Giving Wounded Vets a Second Chance Program</div>
+            <p>
+                Because we are deeply moved by the incredible work of Smoky Mountain Service Dogs, we are honored to support them in their efforts to enhance the physical and psychological quality of life for wounded veterans through professionally trained service dogs. These remarkable dogs provide independence, companionship, and renewed hope.
             </p>
-            <a href="https://pawtree.com/MyPetPeace/contact" class="cta-button">Contact Me</a>
+            <div class="section-title">♻️ Driving Sustainable Impact</div>
+            <p>
+                We do our part in keeping the environment clean and healthy by using recycle-ready packaging to implementing a new shipping box designed to reduce waste, we are committed to continuing our path towards sustainability. Together, we can make a positive impact on our planet for future generations of pets and their people.
+            </p>
         </div>
 
-        <div style="text-align: center; margin-top: 30px; color: #2d8659;">
-            <p style="font-size: 1.1em;">🐾 Wishing you and your furry friends a wonderful holiday season! 🐾</p>
-            <p style="margin-top: 10px; font-style: italic;">- Your PawTree Pet Pro</p>
+        <div class="big-section" style="text-align:center;">
+            <strong>
+                Click the links below to make a donation, purchase a product to make your charitable gift-of-giving contribution, or send a myPlushToy Gift Box!
+            </strong>
+        </div>
+        <div class="cta-row">
+            <a href="https://pawtree.com/MyPetPeace/charity" class="donate-button">Make a Contribution</a>
+            <a href="https://pawtree.com/MyPetPeace/myplushtoy" class="donate-button">myPlushToy Gift Box</a>
+            <a href="https://pawtree.com/MyPetPeace/donate" class="donate-button">Donate Now</a>
+        </div>
+        <div class="big-section" style="text-align:center;">
+            Thank you for visiting our site! Click Shop Now and enjoy your Christmas shopping with PawTree/MyPetPeace.
+            <br><br>
+            <a href="https://pawtree.com/MyPetPeace/shop" class="cta-button">SHOP NOW</a>
+        </div>
+        <div class="footer">
+            Wishing you and your furry friends a wonderful holiday season!<br>
+            <span class="italic">- Your PawTree Pet Pro</span>
         </div>
     </div>
 
@@ -583,13 +246,12 @@
     <div class="exit-popup-overlay" id="exitPopup">
         <div class="exit-popup">
             <button class="exit-popup-close" onclick="closeExitPopup()">&times;</button>
-            <div class="santa-hat">🎅</div>
+            <div class="santa-hat" style="font-size:3em;">🎅</div>
             <h2>HOOOOOOOOOLD IT</h2>
             <p>Don't miss your free gift!</p>
-            <a href="https://pawtree.com/MyPetPeace/enrollment/packs" class="exit-popup-button">Free Gift</a>
+            <a href="https://pawtree.com/MyPetPeace/enrollment/packs" class="exit-popup-button" id="freeGiftBtn">Free Gift</a>
         </div>
     </div>
-
     <!-- Congratulations Popup -->
     <div class="congrats-popup-overlay" id="congratsPopup">
         <div class="congrats-popup">
@@ -598,128 +260,55 @@
             <p>Merry Christmas and Happy New Start and New Year</p>
         </div>
     </div>
-
-    <!-- Audio element for Christmas song -->
     <audio id="christmasSong" loop>
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     </audio>
-
     <script>
-        // Exit Intent Detection
+        // Exit Intent Popup Logic
         let exitPopupShown = false;
         const exitPopup = document.getElementById('exitPopup');
         const christmasSong = document.getElementById('christmasSong');
-
         document.addEventListener('mouseleave', function(e) {
-            if (e.clientY <= 0 && !exitPopupShown) {
-                showExitPopup();
-            }
+            if (e.clientY <= 0 && !exitPopupShown) showExitPopup();
         });
-
         function showExitPopup() {
             exitPopupShown = true;
             exitPopup.classList.add('active');
-            
-            // Play the Christmas song
-            christmasSong.play().catch(function(error) {
-                console.log('Audio autoplay prevented:', error);
-            });
+            christmasSong.play().catch(function() {});
         }
-
         function closeExitPopup() {
             exitPopup.classList.remove('active');
             christmasSong.pause();
         }
-
-        // Close popup when clicking outside
         exitPopup.addEventListener('click', function(e) {
-            if (e.target === exitPopup) {
-                closeExitPopup();
-            }
+            if (e.target === exitPopup) closeExitPopup();
         });
 
-        // Enrollment Pack Form Detection
-        // This monitors for navigation to the enrollment pack page and form submissions
-        function detectEnrollmentSubmission() {
-            // Check if we're on the enrollment pack page
-            if (window.location.href.includes('pawtree.com/MyPetPeace/enrollment/packs')) {
-                // Monitor for form submissions
-                const forms = document.querySelectorAll('form');
-                forms.forEach(form => {
-                    form.addEventListener('submit', function(e) {
-                        // Show congratulations popup after a short delay to allow form processing
-                        setTimeout(showCongratsPopup, 1000);
-                    });
-                });
-
-                // Also monitor for common success indicators
-                const observer = new MutationObserver(function(mutations) {
-                    mutations.forEach(function(mutation) {
-                        if (mutation.addedNodes.length) {
-                            mutation.addedNodes.forEach(function(node) {
-                                if (node.textContent && 
-                                    (node.textContent.includes('success') || 
-                                     node.textContent.includes('thank you') || 
-                                     node.textContent.includes('confirmed'))) {
-                                    showCongratsPopup();
-                                }
-                            });
-                        }
-                    });
-                });
-
-                observer.observe(document.body, {
-                    childList: true,
-                    subtree: true
-                });
-            }
-        }
-
-        // Cross-page detection using localStorage
-        window.addEventListener('storage', function(e) {
-            if (e.key === 'enrollmentCompleted' && e.newValue === 'true') {
-                showCongratsPopup();
-                localStorage.removeItem('enrollmentCompleted');
-            }
-        });
-
-        // Check for enrollment completion on page load
-        if (localStorage.getItem('enrollmentCompleted') === 'true') {
-            showCongratsPopup();
-            localStorage.removeItem('enrollmentCompleted');
-        }
-
+        // Congratulations Popup Logic
         function showCongratsPopup() {
             const congratsPopup = document.getElementById('congratsPopup');
             congratsPopup.classList.add('active');
-            
-            // Auto-close after 5 seconds
             setTimeout(function() {
                 closeCongratsPopup();
             }, 5000);
         }
-
         function closeCongratsPopup() {
-            const congratsPopup = document.getElementById('congratsPopup');
-            congratsPopup.classList.remove('active');
+            document.getElementById('congratsPopup').classList.remove('active');
         }
-
-        // Close congrats popup when clicking outside
         document.getElementById('congratsPopup').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeCongratsPopup();
-            }
+            if (e.target === this) closeCongratsPopup();
         });
 
-        // Initialize enrollment detection
-        detectEnrollmentSubmission();
-
-        // If user clicks on enrollment pack link, set a flag
-        document.querySelectorAll('a[href*="enrollment/packs"]').forEach(function(link) {
-            link.addEventListener('click', function() {
-                sessionStorage.setItem('enrollmentLinkClicked', 'true');
-            });
+        // Show congratulations popup when clicking Free Gift link (simulate after navigation delay)
+        document.getElementById('freeGiftBtn').addEventListener('click', function(e) {
+            setTimeout(showCongratsPopup, 1200); 
         });
+
+        // Optionally, you can show the congrats popup programmatically on page load if certain criteria are met:
+        if (localStorage.getItem('enrollmentCompleted') === 'true') {
+            showCongratsPopup();
+            localStorage.removeItem('enrollmentCompleted');
+        }
     </script>
 </body>
 </html>
