@@ -152,6 +152,28 @@
             box-shadow: 0 12px 40px rgba(45, 134, 89, 0.6);
         }
 
+        #skipToShopBtn {
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.9);
+            color: #c41e3a;
+            border: 2px solid white;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        #skipToShopBtn:hover {
+            transform: scale(1.05);
+            background: white;
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+        }
+
         @keyframes pulse {
             0%, 100% {
                 transform: scale(1);
@@ -277,6 +299,7 @@
         <div id="christmasTree">🎄</div>
         <p id="startText">Skip the Dog and Cat Chase and make yourself happy and your bestie happy THIS CHRISTMAS</p>
         <button id="startBtn">ENTER</button>
+        <a id="skipToShopBtn" href="giftideas.html">Skip to Shop</a>
         <div id="animatedPets">🐕💡🎄💡🐈</div>
     </div>
 
@@ -299,23 +322,66 @@
         const startOverlay = document.getElementById('startOverlay');
         const startBtn = document.getElementById('startBtn');
 
+        let videoTimeout = null;
+
         // Prevent video from playing until user clicks start
         video.pause();
+
+        // Function to show the Shop Now button
+        function showShopNowButton() {
+            unmuteBtn.classList.remove('show');
+            shopNowBtn.classList.add('show');
+        }
+
+        // Error handling for video - if video fails to load, show Shop Now button
+        video.addEventListener('error', () => {
+            console.log('Video load error - showing Shop Now button');
+            showShopNowButton();
+        });
+
+        // Handle case where video metadata fails to load
+        video.addEventListener('loadedmetadata', () => {
+            console.log('Video metadata loaded successfully');
+            if (videoTimeout) {
+                clearTimeout(videoTimeout);
+                videoTimeout = null;
+            }
+        });
 
         // Start button handler - enables sound and starts video
         startBtn.addEventListener('click', () => {
             startOverlay.classList.add('hidden');
             video.muted = false;
             video.volume = 1.0;
+            
+            // Set a 3-second timeout - if video doesn't start playing, show Shop Now button
+            videoTimeout = setTimeout(() => {
+                console.log('Video timeout - showing Shop Now button');
+                showShopNowButton();
+            }, 3000);
+
             video.play().catch(error => {
                 console.log('Play error:', error);
+                // If play fails, show the Shop Now button immediately
+                if (videoTimeout) {
+                    clearTimeout(videoTimeout);
+                }
+                showShopNowButton();
             });
+        });
+
+        // Clear timeout if video starts playing successfully
+        video.addEventListener('playing', () => {
+            console.log('Video is playing');
+            if (videoTimeout) {
+                clearTimeout(videoTimeout);
+                videoTimeout = null;
+            }
         });
 
         // Show Shop Now button when video ends
         video.addEventListener('ended', () => {
-            unmuteBtn.classList.remove('show');
-            shopNowBtn.classList.add('show');
+            showShopNowButton();
         });
     </script>
 </body>
